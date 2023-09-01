@@ -43,6 +43,3 @@ Submitted: About 2 days ago
 ```
 
 Keep in mind that the actual formatted output will depend on the current time and the specific Unix timestamp you provide.
-# unix-date-formatter
-# unix-date-formatter
-# unix-date-formatter
