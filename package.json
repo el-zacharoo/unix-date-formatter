@@ -1,8 +1,12 @@
 {
     "name": "unix-date-formatter",
     "description": "format Unix timestamps into human-readable strings",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/el-zacharoo/unix-date-formatter"
+    },
     "exports": {
         ".": {
             "import": "./dist/main.js",
