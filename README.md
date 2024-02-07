@@ -14,14 +14,14 @@ After installing the library, you can use it to format Unix timestamps in your J
 
 Import the unixFormatter function from the unix-date-formatter module:
 ```javascript
-import { unixFormatter } from "unix-date-formatter";
+import { unixFormatter } from "unix-date-formatter/unix";
 ```
 
 Use the unixFormatter function to format Unix timestamps into readable strings. Pass the Unix timestamp (in seconds) as an argument to the unixFormatter component:
  
 ```javascript
 import React from "react";
-import { unixFormatter } from "unix-date-formatter";
+import { unixFormatter } from "unix-date-formatter/unix";
 
 const DateFormat = () => {
     const unixTimestamp = 1675135145; // Replace with your Unix timestamp
