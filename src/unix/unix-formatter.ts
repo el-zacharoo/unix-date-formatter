@@ -13,41 +13,28 @@ const timeFunc = (elapsed: number): string => {
     const msPerMonth: number = msPerDay * 30;
     const msPerYear: number = msPerDay * 365;
 
-    if (elapsed < msPerMinute) {
-        if (Math.round(elapsed / 1000) > 1) {
-            return `${Math.round(elapsed / 1000)} seconds ago`;
-        } else {
-            return "Just now";
-        }
-    } else if (elapsed < msPerHour) {
-        if (Math.round(elapsed / msPerMinute) > 1) {
-            return `${Math.round(elapsed / msPerMinute)} minutes ago`;
-        } else {
-            return `${Math.round(elapsed / msPerMinute)} minute ago`;
-        }
-    } else if (elapsed < msPerDay) {
-        if (Math.round(elapsed / msPerHour) > 1) {
-            return `${Math.round(elapsed / msPerHour)} hours ago`;
-        } else {
-            return `${Math.round(elapsed / msPerHour)} hour ago`;
-        }
-    } else if (elapsed < msPerMonth) {
-        if (Math.round(elapsed / msPerDay) > 1) {
-            return `About ${Math.round(elapsed / msPerDay)} days ago`;
-        } else {
-            return `About ${Math.round(elapsed / msPerDay)} day ago`;
-        }
-    } else if (elapsed < msPerYear) {
-        if (Math.round(elapsed / msPerMonth) > 1) {
-            return `About ${Math.round(elapsed / msPerMonth)} months ago`;
-        } else {
-            return `About ${Math.round(elapsed / msPerMonth)} month ago`;
-        }
-    } else {
-        if (Math.round(elapsed / msPerYear) > 1) {
-            return `About ${Math.round(elapsed / msPerYear)} years ago`;
-        } else {
-            return `About ${Math.round(elapsed / msPerYear)} year ago`;
-        }
+    switch (true) {
+        case elapsed < msPerMinute:
+            return elapsed < 1000 ? "Just now" : `${Math.round(elapsed / 1000)} seconds ago`;
+        case elapsed < msPerHour:
+            return Math.round(elapsed / msPerMinute) > 1
+                ? `${Math.round(elapsed / msPerMinute)} minutes ago`
+                : `${Math.round(elapsed / msPerMinute)} minute ago`;
+        case elapsed < msPerDay:
+            return Math.round(elapsed / msPerHour) > 1
+                ? `${Math.round(elapsed / msPerHour)} hours ago`
+                : `${Math.round(elapsed / msPerHour)} hour ago`;
+        case elapsed < msPerMonth:
+            return Math.round(elapsed / msPerDay) > 1
+                ? `About ${Math.round(elapsed / msPerDay)} days ago`
+                : `About ${Math.round(elapsed / msPerDay)} day ago`;
+        case elapsed < msPerYear:
+            return Math.round(elapsed / msPerMonth) > 1
+                ? `About ${Math.round(elapsed / msPerMonth)} months ago`
+                : `About ${Math.round(elapsed / msPerMonth)} month ago`;
+        default:
+            return Math.round(elapsed / msPerYear) > 1
+                ? `About ${Math.round(elapsed / msPerYear)} years ago`
+                : `About ${Math.round(elapsed / msPerYear)} year ago`;
     }
 };

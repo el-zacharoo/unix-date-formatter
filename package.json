@@ -1,8 +1,21 @@
 {
     "name": "unix-date-formatter",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "format Unix timestamps into human-readable strings",
     "private": false,
+    "keywords": [
+        "unix",
+        "date",
+        "formatter",
+        "timestamp",
+        "time",
+        "human-readable",
+        "typescript",
+        "javascript",
+        "node",
+        "npm",
+        "react"
+    ],
     "scripts": {
         "prepare": "npm run build",
         "build": "npm run clean && npm run lint && tsc",

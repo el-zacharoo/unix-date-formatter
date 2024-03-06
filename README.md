@@ -11,6 +11,7 @@ npm install unix-date-formatter
 
 ## Usage
 After installing the library, you can use it to format Unix timestamps in your JavaScript or TypeScript projects.
+This library should work 
 
 Import the unixFormatter function from the unix-date-formatter module:
 ```javascript
